@@ -10,15 +10,11 @@ export default $config({
     };
   },
   async run() {
-    const { bucket } = await import("./infra/bucket");
-    const { dynamo } = await import("./infra/dynamo");
-    const { queue } = await import("./infra/rekognition");
+    const storage = await import("./infra/storage");
+    await import("./infra/api");
 
     return {
-      PrimaryTableName: dynamo.name,
-      PrimaryTableArn: dynamo.arn,
-      Bucketname: bucket.name,
-      BucketArn: bucket.arn,
+      MyBucket: storage.bucket.name,
     };
   },
 });

@@ -5,17 +5,14 @@
 
 declare module "sst" {
   export interface Resource {
-    "DemoBucket": {
+    "MyApi": {
+      "name": string
+      "type": "sst.aws.Function"
+      "url": string
+    }
+    "MyBucket": {
       "name": string
       "type": "sst.aws.Bucket"
-    }
-    "DemoDynamo": {
-      "name": string
-      "type": "sst.aws.Dynamo"
-    }
-    "DemoQueue": {
-      "type": "sst.aws.Queue"
-      "url": string
     }
   }
 }

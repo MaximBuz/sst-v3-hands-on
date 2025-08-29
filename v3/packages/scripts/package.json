@@ -1,0 +1,16 @@
+{
+  "name": "@v3/scripts",
+  "version": "0.0.0",
+  "type": "module",
+  "dependencies": {
+    "@v3/core": "*",
+    "sst": "*"
+  },
+  "scripts": {
+    "shell": "sst shell tsx"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "tsx": "^4"
+  }
+}
