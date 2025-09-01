@@ -1,0 +1,7 @@
+# sst build output
+.build
+.sst
+**/.sst.config.*.mjs
+cdk.context.json
+
+*/node_modules

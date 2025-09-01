@@ -5,7 +5,8 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "sst dev"
+    "dev": "sst dev",
+    "sso": "aws sso login"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22",

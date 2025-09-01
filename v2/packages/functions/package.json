@@ -1,0 +1,11 @@
+{
+  "name": "@v2/functions",
+  "version": "0.0.0",
+  "type": "module",
+  "dependencies": {
+    "aws-lambda": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.137"
+  }
+}

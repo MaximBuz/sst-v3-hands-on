@@ -5,14 +5,29 @@
 
 declare module "sst" {
   export interface Resource {
-    "MyApi": {
-      "name": string
-      "type": "sst.aws.Function"
+    "AppApi": {
+      "type": "sst.aws.ApiGatewayV2"
       "url": string
     }
-    "MyBucket": {
+    "Bucket": {
       "name": string
       "type": "sst.aws.Bucket"
+    }
+    "DeadLetterQueue": {
+      "type": "sst.aws.Queue"
+      "url": string
+    }
+    "MeiliSearchApiKey": {
+      "type": "sst.sst.Secret"
+      "value": string
+    }
+    "Table": {
+      "name": string
+      "type": "sst.aws.Dynamo"
+    }
+    "UploadsQueue": {
+      "type": "sst.aws.Queue"
+      "url": string
     }
   }
 }
