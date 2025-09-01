@@ -11,31 +11,41 @@ export default $config({
   },
 
   async run() {
-    const table = await import("./infra/table");
-    const search = await import("./infra/search");
-    const deadLetterQueue = await import("./infra/deadLetterQueue");
-    const storage = await import("./infra/storage");
-    const api = await import("./infra/api");
+    /**
+     * Please import the following files:
+     * - table.ts
+     * - search.ts
+     * - deadLetterQueue.ts
+     * - storage.ts
+     * - api.ts
+     *
+     * @see https://sst.dev/docs/set-up-a-monorepo/#infrastructure
+     */
 
     /**
-     * Please use the File Upload (`storage.ts`) Queues.url's `apply` method to export the following string:
+     * Please use the File Upload Queue URL's (`storage.ts`) `apply` method to construct the following string:
      * `${fileUploadQueueUrl}-${stageName}`
+     *
+     * @see https://sst.dev/docs/components/#apply
      */
-    const QueueStageUrlUsingApply = storage.queue.url.apply(
-      (value) => `${value}-${$app.stage}`
-    );
+    const QueueStageUrlUsingApply = "TODO";
 
     /**
-     * Please use the global `$interpolate` method to export the following string:
+     * Please use the global `$interpolate` method to construct the following string:
      * `${fileUploadQueueUrl}-${stageName}`
+     *
+     * @see https://sst.dev/docs/components/#interpolate
      */
-    const QueueStageUrlUsingInterpolate = $interpolate`${storage.queue.url}-${$app.stage}`;
+    const QueueStageUrlUsingInterpolate = "TODO";
 
+    /**
+     * Please return the following items:
+     * - DeadLetterQueueUrl
+     * - BucketName
+     * - ApiUrl
+     * - TableName 
+     */
     return {
-      DeadLetterQueue: deadLetterQueue.dlq.url,
-      Bucket: storage.bucket.name,
-      ApiUrl: api.api.url,
-      Table: table.table.name,
       QueueStageUrlUsingApply,
       QueueStageUrlUsingInterpolate,
     };

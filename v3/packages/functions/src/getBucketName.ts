@@ -3,6 +3,8 @@ import { Handler } from "aws-lambda";
 
 /**
  * Please return the 'Buckets' name using the sst SDK here
+ * 
+ * @see https://sst.dev/docs/linking/
  */
 export const handler: Handler = async (_event) => {
   const bucketName = Resource.Bucket.name;
